@@ -13,7 +13,7 @@ const bot = new Telegraf(API_TOKEN);
 bot.telegram.setWebhook();
 FB.setAccessToken(process.env.GRAPH_TOKEN);
 // bot.telegram.setWebhook(`${URL}/bot${API_TOKEN}`);
-expressApp.use(bot.webhookCallback(`/bot${API_TOKEN}`));
+// expressApp.use(bot.webhookCallback(`/bot${API_TOKEN}`));
 
 bot.command('welcome', (ctx) => ctx.reply('Hello!'));
 
