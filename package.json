@@ -17,6 +17,7 @@
     "babel-preset-stage-2": "6.24.1",
     "babel-register": "6.24.1",
     "dotenv": "^5.0.1",
+    "express": "^4.16.2",
     "fb": "^2.0.0",
     "moment": "^2.21.0",
     "nodemon": "1.11.0",
