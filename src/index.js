@@ -5,7 +5,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 const FB = require('fb');
 FB.setAccessToken(process.env.GRAPH_TOKEN);
 
-bot.telegram.setWebhook();
+bot.telegram.setWebhook("https://aondevaiseroalmocobot.herokuapp.com");
 
 bot.command('welcome', (ctx) => ctx.reply('Hello!'));
 
