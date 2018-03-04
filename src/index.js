@@ -1,11 +1,16 @@
 require('dotenv').config();
 const moment = require('moment');
 const Telegraf = require('telegraf');
-const bot = new Telegraf(process.env.BOT_TOKEN);
 const FB = require('fb');
-FB.setAccessToken(process.env.GRAPH_TOKEN);
 
-bot.telegram.setWebhook("https://aondevaiseroalmocobot.herokuapp.com");
+const API_TOKEN = process.env.BOT_TOKEN || '';
+const PORT = process.env.PORT || 3000;
+const URL = process.env.URL || 'https://aondevaiseroalmocobot.herokuapp.com';
+const bot = new Telegraf(API_TOKEN);
+
+FB.setAccessToken(process.env.GRAPH_TOKEN);
+bot.telegram.setWebhook(`${URL}/bot${API_TOKEN}`);
+bot.startWebhook(`/bot${API_TOKEN}`, null, PORT);
 
 bot.command('welcome', (ctx) => ctx.reply('Hello!'));
 
