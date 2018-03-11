@@ -4,6 +4,7 @@ const Telegraf = require('telegraf');
 const FB = require('fb');
 const express = require('express');
 const expressApp = express();
+const http = require("http");
 
 const API_TOKEN = process.env.BOT_TOKEN || '';
 const PORT = process.env.PORT || 3000;
@@ -52,7 +53,7 @@ expressApp.listen(PORT, () => {
 });
 
 setInterval(function() {
-    expressApp.get(URL);
+    http.get(URL);
 }, 300000);
 
 function getData(restaurant) {
