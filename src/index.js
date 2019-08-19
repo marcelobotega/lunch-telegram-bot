@@ -65,7 +65,7 @@ function handleData(data, restaurant) {
 
     for (let i = 0; i < repeatTimes; i++) {
         let item = data[i];
-        if (item.message.indexOf(restaurant.filter) > -1 && moment(item.created_time).isSame(moment(), "day")) {
+        if (item.message && item.message.indexOf(restaurant.filter) > -1 && moment(item.created_time).isSame(moment(), "day")) {
             return item.message;
         }
     }
